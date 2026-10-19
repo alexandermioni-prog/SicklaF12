@@ -1,0 +1,12 @@
+{
+  "ledare": [
+    { "namn": "Viggo Tiberg", "roll": "Huvudtränare", "epost": "Tibergviggo@gmail.com" },
+    { "namn": "Alexander Gustafsson", "roll": "Ass. tränare", "epost": "Alexandermioni@gmail.com" },
+    { "namn": "Jesper Sundblad", "roll": "Ass. tränare", "epost": "" },
+    { "namn": "Christian Hansson", "roll": "Ass. tränare", "epost": "" },
+    { "namn": "Katarina Arnrup", "roll": "Sjukvårdsansvarig", "epost": "" },
+    { "namn": "Pontus Ahlin", "roll": "Lagledare", "epost": "pontus.ahlin@icloud.com" },
+    { "namn": "Johanna Åhl", "roll": "Lagledare", "epost": "" },
+    { "namn": "Therese Paulin", "roll": "Lagledare", "epost": "" }
+  ]
+}

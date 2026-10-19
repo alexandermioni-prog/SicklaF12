@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sickla F2012 – Sickla IF</title>
+<meta name="description" content="Sickla IF F2012 i Nacka. Träningar, matcher, nyheter och sponsorer. Alla födda 2012 är välkomna.">
+<link rel="icon" href="/img/logga.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<style>:root{color-scheme:light}html{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: club-colour bands stacked like a matchday programme; navy hero with the 2026 team photo, red accents, gold laurel details */
+:root{
+  --navy:#1a2550; --red:#c4122f; --gold:#a8925a;
+  --bg:#f6f6f8; --surface:#ffffff; --fg:#161a2b; --muted:#5a6078; --line:#dfe1e8;
+  --band:#1a2550; --band-fg:#ffffff; --band-muted:#c9cde0;
+  --accent:#c4122f; --accent-fg:#ffffff; --chip:#eef0f6;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12141c; --surface:#1b1e29; --fg:#eceef4; --muted:#a2a7bb; --line:#2c3040;
+  --band:#0d1330; --band-fg:#ffffff; --band-muted:#b4b9d2;
+  --accent:#e2334f; --accent-fg:#ffffff; --chip:#252a3a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12141c; --surface:#1b1e29; --fg:#eceef4; --muted:#a2a7bb; --line:#2c3040;
+  --band:#0d1330; --band-fg:#ffffff; --band-muted:#b4b9d2;
+  --accent:#e2334f; --accent-fg:#ffffff; --chip:#252a3a; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--band)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0}
+h2{font-size:clamp(2rem,4.5vw,2.8rem);font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+h3{font-size:1.35rem;font-weight:700}
+p{margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--band);color:var(--band-fg);border-bottom:4px solid var(--red)}
+.bar{display:flex;align-items:center;gap:20px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.4rem;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
+.brand img{width:44px;height:auto;background:#fff;border-radius:50%;padding:3px}
+nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+nav a{font-family:var(--display);font-weight:600;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;padding:6px 10px;border-radius:4px;color:var(--band-muted)}
+nav a:hover{color:var(--band-fg);background:rgba(255,255,255,.08)}
+nav a.cta{background:var(--red);color:#fff}
+@media (max-width:820px){nav{display:none}}
+
+/* hero */
+.hero{background:var(--band);color:var(--band-fg);padding-block:48px 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:28px}
+.hero h1{font-size:clamp(3.4rem,10vw,7rem);font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+.hero h1 span{color:var(--red);-webkit-text-stroke:0}
+.hero .lead{font-size:1.2rem;max-width:58ch;color:var(--band-muted)}
+.meta{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.95rem;color:var(--gold)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:12px 22px;border-radius:4px;border:2px solid transparent}
+.btn.red{background:var(--red);color:#fff}
+.btn.ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.btn.ghost:hover{border-color:#fff}
+.hero-photo{margin-top:8px;border-radius:8px 8px 0 0;overflow:hidden;border:4px solid #fff;border-bottom:0;max-width:100%}
+.hero-photo img{display:block;width:100%;height:auto}
+
+section{padding-block:72px}
+.sec-head{display:grid;gap:10px;margin-bottom:32px;max-width:65ch}
+.sec-head p{color:var(--muted)}
+
+/* values */
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:40px}
+.value{padding:20px;border-top:4px solid var(--red);background:var(--surface)}
+.value p{color:var(--muted);margin-top:6px}
+
+/* staff */
+.staff{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:2px;min-width:0}
+.person .role{font-family:var(--display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;color:var(--accent)}
+.person .name{font-weight:600;font-size:1.1rem}
+.person .mail{font-size:.9rem;color:var(--muted);overflow-wrap:anywhere;user-select:all}
+.person.head{border-color:var(--navy);border-width:2px}
+
+/* schedule */
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.sched{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.day{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg)}
+.day .d{background:var(--band);color:var(--band-fg);font-family:var(--display);font-weight:800;font-size:1.5rem;text-transform:uppercase;letter-spacing:.04em;padding:10px 16px}
+.day .t{padding:14px 16px 4px;font-family:var(--display);font-weight:700;font-size:2rem;font-variant-numeric:tabular-nums}
+.day .p{padding:0 16px 16px;color:var(--muted)}
+.note{margin-top:18px;display:inline-flex;gap:8px;align-items:center;background:var(--chip);padding:8px 14px;border-radius:999px;font-size:.95rem}
+.note b{color:var(--accent)}
+.matches{margin-top:44px;display:grid;gap:12px}
+.empty{border:2px dashed var(--line);border-radius:6px;padding:22px;color:var(--muted)}
+
+/* news */
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.post{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.post img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.post .body{padding:18px;display:grid;gap:8px}
+.post .date{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.post p{color:var(--muted)}
+.tag{justify-self:start;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--chip);color:var(--muted);padding:2px 8px;border-radius:3px}
+
+/* join */
+.join{background:var(--red);color:#fff}
+.join-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;align-items:center}
+.join h2{color:#fff}
+.join .big{font-family:var(--display);font-weight:800;font-size:clamp(4rem,12vw,8rem);line-height:.9;letter-spacing:-.02em}
+.join ol{margin:16px 0 0;padding-left:1.2em;display:grid;gap:6px}
+.join .eyebrow{color:#ffd9de}
+.join img{border-radius:6px;width:100%;height:auto;display:block;border:4px solid #fff}
+
+/* sponsors */
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.tier{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px;display:grid;gap:10px;align-content:start}
+.tier .price{font-family:var(--display);font-weight:800;font-size:2.4rem;font-variant-numeric:tabular-nums;line-height:1}
+.tier .price small{font-size:1rem;font-weight:600;color:var(--muted)}
+.tier ul{margin:0;padding-left:1.1em;color:var(--muted)}
+.tier .medal{width:34px;height:34px;border-radius:50%}
+.gold .medal{background:radial-gradient(circle at 35% 35%,#f3dc8a,#b8913a)}
+.silver .medal{background:radial-gradient(circle at 35% 35%,#f1f2f5,#9aa0ad)}
+.bronze .medal{background:radial-gradient(circle at 35% 35%,#f0c39b,#a5652f)}
+.gold{border:2px solid var(--gold)}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:32px}
+.why div{padding-left:14px;border-left:3px solid var(--gold)}
+.partner{margin-top:32px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;color:var(--muted)}
+.partner strong{font-family:var(--display);font-size:1.4rem;color:var(--fg);letter-spacing:.03em}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.gallery img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:4px}
+
+footer{background:var(--band);color:var(--band-muted);padding-block:36px;border-top:4px solid var(--red)}
+.foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.foot img{width:60px;background:#fff;border-radius:50%;padding:4px}
+.foot .who{display:flex;gap:14px;align-items:center}
+.foot strong{color:#fff;font-family:var(--display);font-size:1.3rem;text-transform:uppercase;letter-spacing:.03em}
+.login{font-size:.9rem;color:var(--band-muted);border:1px solid rgba(255,255,255,.3);padding:6px 12px;border-radius:4px;text-decoration:none}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+.partners{margin-top:32px;display:grid;gap:12px}
+.partners .thanks{color:var(--muted)}
+.logos{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+.sp{display:grid;gap:2px}
+.sp strong{font-family:var(--display);font-size:1.4rem;letter-spacing:.03em}
+.sp span{font-size:.85rem;color:var(--muted)}
+.sp img{max-height:60px;width:auto}
+.table-wrap{overflow-x:auto}
+.mt{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;background:var(--bg)}
+.mt th,.mt td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+.mt th{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:.9rem;color:var(--muted)}
+.mt tr.past{color:var(--muted)}
+.mt .res{font-weight:600}
+a.login:hover{color:#fff;border-color:#fff}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#start"><img src="/img/logga.png" alt="Sickla IF:s klubbmärke">Sickla F2012</a>
+    <nav aria-label="Huvudmeny">
+      <a href="#laget">Laget</a>
+      <a href="#traningar">Träningar</a>
+      <a href="#nyheter">Nyheter</a>
+      <a href="#borja">Börja spela</a>
+      <a class="cta" href="#sponsorer">Bli sponsor</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero" id="start">
+  <div class="wrap hero-grid">
+    <div class="meta"><span>Sickla IF</span><span>Nacka</span><span>Sedan 1938</span><span>Säsongen 2026</span></div>
+    <h1>Sickla <span>F2012</span></h1>
+    <p class="lead">Vi tränar, spelar matcher och utvecklas tillsammans. Hos oss är alla som är födda 2012 välkomna, oavsett om du spelat i flera år eller aldrig sparkat på en boll.</p>
+    <div class="btns">
+      <a class="btn red" href="#borja">Börja spela hos oss</a>
+      <a class="btn ghost" href="#sponsorer">Bli sponsor</a>
+      <a class="btn ghost" href="#traningar">Träningstider</a>
+    </div>
+    <div class="hero-photo"><img src="/img/lagbild-2026.jpg" alt="Lagbild Sickla IF F2012, säsongen 2026, med spelare och ledare"></div>
+  </div>
+</div>
+
+<section id="laget">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Laget</span>
+      <h2>Ett lag där alla får plats</h2>
+      <p>Sickla F2012 är ett lag i Sickla IF för spelare födda 2012. Vi tränar tre gånger i veckan, spelar seriematcher och åker på cuper. Vår arvoderade huvudtränare och våra ledare ser till att alla får utvecklas.</p>
+    </div>
+    <div class="values">
+      <div class="value"><h3>Alla är välkomna</h3><p>Ingen stängs ute. Ny eller van spelare, alla har en plats i laget.</p></div>
+      <div class="value"><h3>Glädje först</h3><p>Kamratskap och fotbollsglädje är grunden i allt vi gör.</p></div>
+      <div class="value"><h3>Alla ska utvecklas</h3><p>Varje spelare ska bli bättre, oavsett vilken nivå hon börjar på.</p></div>
+    </div>
+    <h3 style="margin-bottom:14px">Tränare och ledare</h3>
+    <div class="staff" id="ledare"></div>
+  </div>
+</section>
+
+<section id="traningar" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Träningar och matcher</span>
+      <h2>När vi tränar</h2>
+      <p>Våra nuvarande träningstider. Ledarna uppdaterar schemat här när något ändras.</p>
+    </div>
+    <div class="sched" id="pass"></div>
+    <div class="note" id="notis" hidden></div>
+    <div class="matches">
+      <h3>Kommande matcher</h3>
+      <div id="matcher"><div class="empty">Ledarna lägger in matcherna när schemat är klart.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="nyheter">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Nyheter</span>
+      <h2>Senaste nytt från laget</h2>
+      <p>Matchrapporter, cuper och framgångar.</p>
+    </div>
+    <div class="news" id="nyhetslista"></div>
+  </div>
+</section>
+
+<section id="borja" class="join">
+  <div class="wrap join-grid">
+    <div>
+      <span class="eyebrow">Börja spela hos oss</span>
+      <div class="big">2012</div>
+      <h2>Är du född 2012? Välkommen!</h2>
+      <p style="margin-top:12px">Det spelar ingen roll om du har spelat fotboll länge eller aldrig provat. Vi tar emot nya spelare under hela säsongen.</p>
+      <ol>
+        <li>Kontakta någon av <a href="#laget">våra ledare</a>.</li>
+        <li>Kom och prova på några träningar utan krav.</li>
+        <li>Trivs du? Då hjälper vi dig att bli medlem i Sickla IF.</li>
+      </ol>
+      <p style="margin-top:14px"><b>Ta med:</b> kläder efter väder, fotbollsskor eller gympaskor och en vattenflaska.</p>
+    </div>
+    <img src="/img/osmo-borta.jpg" alt="Glada spelare i omklädningsrummet efter bortamatchen mot Ösmo" loading="lazy">
+  </div>
+</section>
+
+<section id="sponsorer">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Sponsorer</span>
+      <h2>Bli en del av vår resa</h2>
+      <p>Med ditt stöd kan vi ha en arvoderad tränare och satsa på fotbollsutveckling för alla. Vi exkluderar ingen, och det kostar pengar att hålla dörren öppen för alla.</p>
+    </div>
+    <div class="why">
+      <div><h3>Arvoderad tränare</h3><p>Kvalitet på varje träning, hela säsongen.</p></div>
+      <div><h3>Utveckling</h3><p>Material, cuper och utbildning för spelare och ledare.</p></div>
+      <div><h3>Fotboll för alla</h3><p>Alla ska kunna vara med, oavsett ekonomi.</p></div>
+    </div>
+    <div class="tiers" id="paket"></div>
+    <p style="margin-top:20px;color:var(--muted)">Vill du bli sponsor? Hör av dig till någon av <a href="#laget">våra ledare</a>.</p>
+    <div class="partners" id="sponsorlista"></div>
+  </div>
+</section>
+
+<section class="alt" aria-label="Bilder">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Bilder</span><h2>Säsongen 2026</h2></div>
+    <div class="gallery">
+      <img src="/img/orebrocupen-1.jpg" alt="Laget poserar på Örebrocupen" loading="lazy">
+      <img src="/img/kvallsmatch.jpg" alt="Laget i en ring inför kvällsmatch" loading="lazy">
+      <img src="/img/taktik.jpg" alt="Taktikgenomgång på planen" loading="lazy">
+      <img src="/img/orebrocupen-2.jpg" alt="Leriga spelare efter match på Örebrocupen" loading="lazy">
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="who"><img src="/img/logga.png" alt=""><div><strong>Sickla IF F2012</strong><br>Nacka · Sedan 1938</div></div>
+    <a class="login" href="/admin/">Ledarinlogg</a>
+  </div>
+</footer>
+
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const get = f => fetch("/content/" + f + ".json", {cache: "no-cache"}).then(r => r.json());
+const fmtDate = d => { if (!d) return ""; const t = new Date(d); return isNaN(t) ? esc(d) : t.toLocaleDateString("sv-SE", {day: "numeric", month: "long", year: "numeric"}); };
+
+get("ledare").then(({ledare = []}) => {
+  document.getElementById("ledare").innerHTML = ledare.map((p, i) =>
+    `<div class="person${/huvudtr/i.test(p.roll) ? " head" : ""}"><span class="role">${esc(p.roll)}</span><span class="name">${esc(p.namn)}</span>${p.epost ? `<span class="mail">${esc(p.epost)}</span>` : ""}</div>`).join("");
+});
+
+get("traningar").then(({pass = [], notis}) => {
+  document.getElementById("pass").innerHTML = pass.map(p =>
+    `<div class="day"><div class="d">${esc(p.dag)}</div><div class="t">${esc(p.tid)}</div><div class="p">${esc(p.plats)}</div></div>`).join("");
+  const n = document.getElementById("notis");
+  if (notis) { n.innerHTML = `<b>Obs!</b> ${esc(notis)}`; n.hidden = false; }
+});
+
+get("matcher").then(({matcher = []}) => {
+  const today = new Date().toISOString().slice(0, 10);
+  const list = matcher.slice().sort((a, b) => String(a.datum).localeCompare(String(b.datum)));
+  if (!list.length) return;
+  document.getElementById("matcher").innerHTML = `<div class="table-wrap"><table class="mt"><thead><tr><th>Datum</th><th>Tid</th><th>Match</th><th>Plats</th><th>Resultat</th></tr></thead><tbody>${
+    list.map(m => `<tr class="${m.datum < today ? "past" : ""}"><td>${fmtDate(m.datum)}</td><td>${esc(m.tid)}</td><td>${m.hemma ? "Sickla F2012 – " + esc(m.motstandare) : esc(m.motstandare) + " – Sickla F2012"}</td><td>${esc(m.plats)}</td><td class="res">${esc(m.resultat) || "–"}</td></tr>`).join("")
+  }</tbody></table></div>`;
+});
+
+get("nyheter").then(({nyheter = []}) => {
+  const list = nyheter.slice().sort((a, b) => String(b.datum || "").localeCompare(String(a.datum || "")));
+  document.getElementById("nyhetslista").innerHTML = list.length ? list.map(n =>
+    `<article class="post">${n.bild ? `<img src="${esc(n.bild)}" alt="${esc(n.rubrik)}" loading="lazy">` : ""}<div class="body">${n.exempel ? '<span class="tag">Exempeltext</span>' : ""}${n.datum ? `<span class="date">${fmtDate(n.datum)}</span>` : ""}<h3>${esc(n.rubrik)}</h3><p>${esc(n.text)}</p></div></article>`).join("")
+    : '<div class="empty">Inga nyheter ännu.</div>';
+});
+
+get("sponsorer").then(({paket = [], sponsorer = []}) => {
+  const cls = {guld: "gold", silver: "silver", brons: "bronze"};
+  document.getElementById("paket").innerHTML = paket.map(p =>
+    `<div class="tier ${cls[String(p.namn).toLowerCase()] || ""}"><span class="medal" aria-hidden="true"></span><h3>${esc(p.namn)}</h3><div class="price">${esc(p.pris)} <small>kr / år</small></div><ul>${(p.formaner || []).map(f => `<li>${esc(f)}</li>`).join("")}</ul></div>`).join("");
+  if (sponsorer.length) document.getElementById("sponsorlista").innerHTML = `<span class="thanks">Tack till våra sponsorer</span><div class="logos">${
+    sponsorer.map(s => { const inner = s.logga ? `<img src="${esc(s.logga)}" alt="${esc(s.namn)}">` : `<strong>${esc(s.namn)}</strong>`; return `<div class="sp">${s.lank ? `<a href="${esc(s.lank)}" target="_blank" rel="noopener">${inner}</a>` : inner}${s.niva ? `<span>${esc(s.niva)}</span>` : ""}</div>`; }).join("")
+  }</div>`;
+});
+</script>
+</body>
+</html>

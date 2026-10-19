@@ -1,0 +1,106 @@
+# Ledarinlogg för Sickla F2012 (Decap CMS).
+# Ledare loggar in med sitt GitHub-konto och måste vara inbjudna till repot.
+backend:
+  name: github
+  repo: alexandermioni-prog/SicklaF12
+  branch: main
+  commit_messages:
+    update: "Uppdatera {{collection}} via ledarinloggen"
+
+locale: sv
+site_url: /
+display_url: /
+logo_url: /img/logga.png
+media_folder: img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: innehall
+    label: Innehåll
+    editor: { preview: false }
+    files:
+      - name: nyheter
+        label: Nyheter
+        file: content/nyheter.json
+        fields:
+          - name: nyheter
+            label: Nyheter
+            label_singular: Nyhet
+            widget: list
+            summary: "{{fields.datum}} {{fields.rubrik}}"
+            fields:
+              - { name: rubrik, label: Rubrik, widget: string }
+              - { name: datum, label: Datum, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, required: false }
+              - { name: bild, label: Bild, widget: image, required: false }
+              - { name: text, label: Text, widget: text }
+              - { name: exempel, label: "Exempeltext (bocka ur när nyheten är riktig)", widget: boolean, default: false, required: false }
+
+      - name: matcher
+        label: Matcher och resultat
+        file: content/matcher.json
+        fields:
+          - name: matcher
+            label: Matcher
+            label_singular: Match
+            widget: list
+            summary: "{{fields.datum}} {{fields.motstandare}} {{fields.resultat}}"
+            fields:
+              - { name: datum, label: Datum, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { name: tid, label: "Tid (t.ex. 10:00)", widget: string, required: false }
+              - { name: motstandare, label: Motståndare, widget: string }
+              - { name: hemma, label: Hemmamatch, widget: boolean, default: true }
+              - { name: plats, label: Plats, widget: string, required: false }
+              - { name: resultat, label: "Resultat (t.ex. 3–1, tomt innan matchen)", widget: string, required: false }
+
+      - name: traningar
+        label: Träningstider
+        file: content/traningar.json
+        fields:
+          - { name: notis, label: "Meddelande (t.ex. ändrade tider)", widget: string, required: false }
+          - name: pass
+            label: Träningspass
+            label_singular: Pass
+            widget: list
+            summary: "{{fields.dag}} {{fields.tid}}"
+            fields:
+              - { name: dag, label: Dag, widget: select, options: [Måndag, Tisdag, Onsdag, Torsdag, Fredag, Lördag, Söndag] }
+              - { name: tid, label: "Tid (t.ex. 18:30–20:00)", widget: string }
+              - { name: plats, label: Plats, widget: string }
+
+      - name: ledare
+        label: Tränare och ledare
+        file: content/ledare.json
+        fields:
+          - name: ledare
+            label: Ledare
+            label_singular: Ledare
+            widget: list
+            summary: "{{fields.roll}}: {{fields.namn}}"
+            fields:
+              - { name: namn, label: Namn, widget: string }
+              - { name: roll, label: Roll, widget: string }
+              - { name: epost, label: "E-post (visas på sidan)", widget: string, required: false }
+
+      - name: sponsorer
+        label: Sponsorer
+        file: content/sponsorer.json
+        fields:
+          - name: paket
+            label: Sponsorpaket
+            label_singular: Paket
+            widget: list
+            summary: "{{fields.namn}} {{fields.pris}} kr"
+            fields:
+              - { name: namn, label: Namn, widget: string }
+              - { name: pris, label: "Pris per år (kr)", widget: string }
+              - { name: formaner, label: Förmåner, widget: list, field: { name: formAn, label: Förmån, widget: string } }
+          - name: sponsorer
+            label: Våra sponsorer
+            label_singular: Sponsor
+            widget: list
+            summary: "{{fields.niva}}: {{fields.namn}}"
+            fields:
+              - { name: namn, label: Namn, widget: string }
+              - { name: niva, label: "Nivå (Guld, Silver, Brons, Partner)", widget: string, required: false }
+              - { name: logga, label: Logga, widget: image, required: false }
+              - { name: lank, label: Webbplats, widget: string, required: false }

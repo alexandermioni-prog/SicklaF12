@@ -1,0 +1,8 @@
+{
+  "notis": "Träningstiderna ändras i november.",
+  "pass": [
+    { "dag": "Måndag", "tid": "18:30–20:00", "plats": "Nacka IP, utomhus" },
+    { "dag": "Tisdag", "tid": "18:30–20:00", "plats": "Nacka IP, inomhus" },
+    { "dag": "Torsdag", "tid": "17:30–19:00", "plats": "Nacka IP, inomhus" }
+  ]
+}
