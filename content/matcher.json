@@ -1,1 +1,11 @@
-{ "matcher": [] }
+{
+  "matcher": [
+    {
+      "hemma": true,
+      "datum": "2026-10-21",
+      "tid": "KL 18:20",
+      "motstandare": "Hammarby IF FF 3",
+      "plats": "Stavsborgs BP"
+    }
+  ]
+}
