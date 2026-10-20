@@ -1,10 +1,29 @@
 {
   "paket": [
-    { "namn": "Guld", "pris": "20 000", "formaner": ["Stor logga på startsidan", "Logga på träningskläder", "Omnämnande i nyheter"] },
-    { "namn": "Silver", "pris": "10 000", "formaner": ["Logga på sponsorsidan", "Logga i startsidans sponsorrad"] },
-    { "namn": "Brons", "pris": "5 000", "formaner": ["Namn och länk på sponsorsidan"] }
+    {
+      "namn": "Guld",
+      "pris": "20 000",
+      "formaner": [
+        "Stor logga på startsidan",
+        "Logga på träningskläder",
+        "Omnämnande i nyheter"
+      ]
+    },
+    {
+      "namn": "Silver",
+      "pris": "10 000",
+      "formaner": [
+        "Logga på sponsorsidan",
+        "Logga i startsidans sponsorrad"
+      ]
+    },
+    {
+      "namn": "Brons",
+      "pris": "5 000",
+      "formaner": [
+        "Namn och länk på sponsorsidan"
+      ]
+    }
   ],
-  "sponsorer": [
-    { "namn": "Stiftelsen Dunross & Co", "niva": "Partner", "logga": "", "lank": "" }
-  ]
+  "sponsorer": []
 }
